@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Chart Coding Task
 
-## Getting Started
+I have built both components shown in the pdf, each located in ./App/charts and named Line.tsx and Pie.tsx.
+For cleanliness of code I have created a 'database' as database.tsx to store objects full of data for these components.
 
-First, run the development server:
+## View via Vercel
+
+View the published dashboard on Vercel here: https://chart-dashboard-task.vercel.app/
+
+## Running the project locally
+
+First of all, clone this repository.
+
+Then ensure the following dependencies are installed:
+
+```bash
+# Next.js
+npx create-next-app@latest
+
+# Tailwind CSS
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+# Tremor (dashboard UI library used for charts)
+npm install @tremor/react
+
+# Tremor Tailwind dependencies
+npm install @headlessui/react @headlessui/tailwindcss
+npm install -D @tailwindcss/forms
+
+# Faker (produces fake data for line chart)
+npm install @faker-js/faker --save-dev
+```
+
+## Run the project Locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
