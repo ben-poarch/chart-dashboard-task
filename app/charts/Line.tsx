@@ -4,9 +4,6 @@ import {
   Color,
   Flex,
   Icon,
-  Tab,
-  TabGroup,
-  TabList,
   Title,
   Card,
   Select,
@@ -25,9 +22,8 @@ type LineProps = {
 };
 
 const Line = (props: LineProps) => {
-  const [value, setValue] = useState("All");
+  const [selectedKpi, setSelectedKpi] = useState("All");
   const kpiList = Object.values(props.kpis);
-  const selectedKpi = kpiList[parseInt(value)];
 
   const areaChartArgsAll = {
     minValue: -10,
@@ -60,7 +56,7 @@ const Line = (props: LineProps) => {
     yAxisWidth: 50,
   };
   const areaChartArgs =
-    value === "All" ? areaChartArgsAll : areaChartArgsSelected;
+    selectedKpi === "All" ? areaChartArgsAll : areaChartArgsSelected;
 
   return (
     <Card>
@@ -86,14 +82,13 @@ const Line = (props: LineProps) => {
           <Select
             defaultValue="All"
             enableClear={false}
-            value={value}
-            onValueChange={setValue}
+            value={selectedKpi}
+            onValueChange={setSelectedKpi}
           >
             <SelectItem value="All">Show All</SelectItem>
-            <SelectItem value="0">{props.kpis.kpi1}</SelectItem>
-            <SelectItem value="1">{props.kpis.kpi2}</SelectItem>
-            <SelectItem value="2">{props.kpis.kpi3}</SelectItem>
-            {/* <SelectItem value="3">{props.kpis.kpi4}</SelectItem> */}
+            <SelectItem value={props.kpis.kpi1}>{props.kpis.kpi1}</SelectItem>
+            <SelectItem value={props.kpis.kpi2}>{props.kpis.kpi2}</SelectItem>
+            <SelectItem value={props.kpis.kpi3}>{props.kpis.kpi3}</SelectItem>
           </Select>
         </div>
       </div>
